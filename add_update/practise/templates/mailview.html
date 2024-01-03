@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+{% if messages %}
+   {% for msg in messages %}
+{% if msg.tags %}
+<script>alert('{{msg}}')</script>
+{% endif %}
+
+    {% endfor %}
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">subject</label>
+      <div class="col-sm-5">
+    <input type="text" name="subject" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+      </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">message</label>
+            <div class="col-sm-5">
+
+      <textarea  name="message" class="form-control" id="exampleInputPassword1"></textarea>
+  </div>
+      </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">from</label>
+              <div class="col-sm-5">
+
+    <input type="text" name="gmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+        </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

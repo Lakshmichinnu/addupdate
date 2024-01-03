@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<!--    <style>-->
+<!--        .navbar{-->
+<!--      background-color:pink;-->
+<!--        }-->
+
+<!--    </style>-->
+
+<!-- Image and text -->
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for i in res %}
+        <div class="col-md-3">
+            <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap" style="padding-top:3%;">
+
+          <div class="card-body">
+           <h5 class="card-title text-center"><a href="movie/{{i.id}}">{{i.name}}</a></h5>
+         </div>
+        </div>
+{% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
